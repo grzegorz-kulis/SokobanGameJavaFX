@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/null" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.GameController">
+   <top>
+      <ToolBar maxWidth="-Infinity" minWidth="-Infinity" prefWidth="800.0">
+         <items>
+            <Label text="[ ← ] - move left">
+               <padding>
+                  <Insets left="30.0" right="30.0" />
+               </padding>
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+            <Label text="[ ↑ ] - move up">
+               <padding>
+                  <Insets right="30.0" />
+               </padding>
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+            <Label text="[ → ] - move right">
+               <padding>
+                  <Insets right="30.0" />
+               </padding>
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+            <Label text="[ ↓ ] - move down">
+               <padding>
+                  <Insets right="20.0" />
+               </padding>
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+            <Button fx:id="restartLevel" focusTraversable="false" mnemonicParsing="false" onAction="#processRestartLevel" text="Restart level">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Pane prefWidth="20.0" />
+            <Button fx:id="toMainMenu" focusTraversable="false" mnemonicParsing="false" onAction="#processExitGame" text="Exit game">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </Button>
+         </items>
+      </ToolBar>
+   </top>
+   <bottom>
+      <AnchorPane maxWidth="-Infinity" minWidth="-Infinity" prefWidth="800.0" BorderPane.alignment="BOTTOM_LEFT">
+         <children>
+            <Label alignment="CENTER" text="Sokoban by lis3k" />
+         </children></AnchorPane>
+   </bottom>
+   <center>
+      <Pane maxWidth="-Infinity" minWidth="-Infinity" prefWidth="800.0" BorderPane.alignment="CENTER">
+         <children>
+            <Canvas fx:id="img" height="543.0" onKeyPressed="#keyPress" onKeyReleased="#keyRelease" width="800.0" />
+            <Button fx:id="gotoNextLevel" focusTraversable="false" layoutX="282.0" layoutY="233.0" mnemonicParsing="false" onAction="#gotoNextLevel" text="NEXT LEVEL" visible="false">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+   </center>
+</BorderPane>
